@@ -22,18 +22,15 @@
     <div>
         <h3>Comments:</h3>
 {#        <a href="{% url 'webapp:review_create' product.pk %}">Create Review</a>#}
-{#            {% for prod in product.products.all %}#}
-{#                    <p> {{ prod.text }}</p>#}
-{#                    <p> Author: <a href="{% url 'accounts:user_detail' prod.author.pk %}">{{ prod.author }}</a></p>#}
-{#                    <p> Email: {{ prod.author.email }}</p>#}
-{#                    <p>Rating: {{ prod.rating}}</p>#}
-{#                    <p><a href="{% url 'webapp:review_update' prod.pk %}">Edit</a></p>#}
-{#                    <p><a href="{% url 'webapp:review_delete' prod.pk %}">Delete</a></p>#}
-{#                    <hr>#}
-{#            {% empty %}#}
-{#                <p>No reviews yet.</p>#}
-{#            {% endfor %}#}
-{#    </div>#}
+            {% for phot in photo.comments.all %}
+                    <p> {{ phot.text }}</p>
+                    <p> Author: {{ phot.author }}</p>
+                    <p> Date: {{ phot.created_at|date:'d.m.Y H:i:s' }}</p>
+                    <hr>
+            {% empty %}
+                <p>No reviews yet.</p>
+            {% endfor %}
+    </div>
 
 {% endblock %}
 

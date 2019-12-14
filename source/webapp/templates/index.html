@@ -17,6 +17,8 @@
         <h2>{{ photo.author }}</h2>
         <p><a href="{% url 'webapp:photo' photo.pk %}"><img src="{{ photo.picture.url }}" alt="prod_pic" class="avatar"></a></p>
         <div><p>{{ photo.sign }}</p></div>
+        <p>{{ photo.created_at|date:'d.m.Y H:i:s' }}</p>
+        <p>Like {{ photo.like }}</p>
 {#        <p><a href="{% url 'task_view' task.pk %}">More...</a></p>#}
 {#        <p><a href="{% url 'task_update' task.pk %}">Edit</a></p>#}
 {#        <p><a href="{% url 'task_delete' task.pk %}">Delete</a></p>#}

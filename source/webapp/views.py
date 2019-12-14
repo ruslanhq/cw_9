@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -27,11 +28,12 @@ class PhotoCreate(CreateView):
 
     def get_success_url(self):
         return reverse('webapp:photo', kwargs={'pk': self.object.pk})
-    #
-    # def form_valid(self, form):
-    #     self.object = form.save(commit=False)
-    #     self.object.author = self.request.user
-    #     return
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.author = self.request.user
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
 
 
 class PhotoUpdate(UpdateView):
