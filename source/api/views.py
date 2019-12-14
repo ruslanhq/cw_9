@@ -35,6 +35,7 @@ class LikeViewSet(ModelViewSet):
         like = self.get_object()
         if like.like != True:
             like.like = True
+            like.photo.like += 1
             like.save()
             return Response({'id': like.photo.pk, 'like': like.like})
 
@@ -43,5 +44,6 @@ class LikeViewSet(ModelViewSet):
         like = self.get_object()
         if like.like == True:
             like.like = False
+            like.photo.like -= 1
             like.save()
             return Response({'id': like.photo.pk, 'like': like.like})

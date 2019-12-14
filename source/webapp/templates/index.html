@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block menu %}
+    {% if request.user.is_authenticated %}
            <li><a href="{% url 'webapp:create' %}">Create</a></li>
-{#           <li><a href="{% url 'type_list' %}">Type List</a></li>#}
-{#           <li><a href="{% url 'project_list' %}">Project List</a></li>#}
-{#           <li><a href="{% url 'accounts:users_list' %}">Users List</a></li>#}
+    {% endif %}
+
 
 
 
@@ -19,9 +19,7 @@
         <div><p>{{ photo.sign }}</p></div>
         <p>{{ photo.created_at|date:'d.m.Y H:i:s' }}</p>
         <p>Like {{ photo.like }}</p>
-{#        <p><a href="{% url 'task_view' task.pk %}">More...</a></p>#}
-{#        <p><a href="{% url 'task_update' task.pk %}">Edit</a></p>#}
-{#        <p><a href="{% url 'task_delete' task.pk %}">Delete</a></p>#}
+
         <hr/>
     {% endfor %}
 {% endblock %}

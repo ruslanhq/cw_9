@@ -1,11 +1,14 @@
-const baseUrl = 'http://localhost:8000/api/';
+function jqueryParseData (response, status) {
+    location.reload(true)
 
-function getFullPath(path) {
+    console.log(response);
+    console.log(status);
+}
 
-    path = path.replace(/^\/+|\/+$/g, '');
-    path = path.replace(/\/{2,}/g, '/');
-    return baseUrl + path + '/';
-
+function jqueryAjaxError(response, status) {
+    console.log(response);
+    console.log(status);
+    console.log('error');
 }
 
 function getCookie(name) {
@@ -26,19 +29,28 @@ function getCookie(name) {
 var csrftoken = getCookie('csrftoken');
 
 
+function delComment(comment_id) {
+    $.ajax({
+        url: 'http://localhost:8000/api/comment/' + comment_id,
+        method: 'DELETE',
+        contentType: 'application/json',
+        headers: {'X-CSRFToken': csrftoken},
+        dataType: 'json',
+        success: jqueryParseData,
+        error: jqueryAjaxError
+    })
+}
 
-function makeRequest(path, method, auth=true, data=null) {
-    let settings = {
-        url: getFullPath(path),
-        method: method,
-        dataType: 'json'
-    };
-    if (data) {
-        settings['data'] = JSON.stringify(data);
-        settings['contentType'] = 'application/json';
-    }
-    if (auth) {
-        settings.headers = {'Authorization':  'Token ' + getCookie('csrftoken')};
-    }
-    return $.ajax(settings);
+
+function createComment() {
+    $.ajax({
+        url: 'http://localhost:8000/api/comment/',
+        method: 'POST',
+        contentType: 'application/json',
+        headers: {'X-CSRFToken': csrftoken},
+        data: JSON.stringify({text: 'test', author: 'admin', photo: 1}),
+        dataType: 'json',
+        success: jqueryParseData,
+        error: jqueryAjaxError
+    })
 }
