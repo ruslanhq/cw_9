@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ user_obj.username }}{% endblock %}
+{% block menu %}
+{#    {% if user_obj == request.user %}#}
+{#        <li><a href="{% url 'accounts:user_profile' user_obj.pk %}">View</a></li>#}
+{#        <li><a href="{% url 'accounts:user_edit_pass' user_obj.pk %}">Change Password</a></li>#}
+{#    {% endif %}#}
+{% endblock %}
+{% block content %}
+    <h1>Edit Photo</h1>
+    <form action="{% url 'webapp:update' photo.pk %}" method="post" enctype="multipart/form-data">
+        {% include 'partial/task_form.html' with button_text='Update' %}
+    </form>
+{% endblock %}
