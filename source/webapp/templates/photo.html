@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Product{% endblock %}
+{% block menu %}
+{#        <li><a href="{% url 'webapp:prod_update' product.pk %}">Edit</a></li>#}
+{#        <li><a href="{% url 'task_delete' tasks.pk %}">Delete</a></li>#}
+
+{% endblock %}
+{% block content %}
+    <h1>{{ photo.author }}</h1>
+{#    <a href="{% url 'webapp:prod_update' product.pk %}">Edit</a>#}
+{#    <a href="{% url 'webapp:prod_delete' product.pk %}">Delete</a>#}
+{#    {% if product.picture %}#}
+        <img src="{{ photo.picture.url }}" alt="prod_pic" class="avatar">
+{#    {% else %}#}
+{#        <img src="{% static 'img/images.png' %}" alt="prod_pic" class="avatar">#}
+{#    {% endif %}#}
+    <p><b>{{ photo.sign }}</b> </p>
+    <p>{{ photo.created_at|date:'d.m.Y H:i:s' }}</p>
+    <div>
+        <h3>Comments:</h3>
+{#        <a href="{% url 'webapp:review_create' product.pk %}">Create Review</a>#}
+{#            {% for prod in product.products.all %}#}
+{#                    <p> {{ prod.text }}</p>#}
+{#                    <p> Author: <a href="{% url 'accounts:user_detail' prod.author.pk %}">{{ prod.author }}</a></p>#}
+{#                    <p> Email: {{ prod.author.email }}</p>#}
+{#                    <p>Rating: {{ prod.rating}}</p>#}
+{#                    <p><a href="{% url 'webapp:review_update' prod.pk %}">Edit</a></p>#}
+{#                    <p><a href="{% url 'webapp:review_delete' prod.pk %}">Delete</a></p>#}
+{#                    <hr>#}
+{#            {% empty %}#}
+{#                <p>No reviews yet.</p>#}
+{#            {% endfor %}#}
+{#    </div>#}
+
+{% endblock %}
+

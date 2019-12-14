@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from webapp.models import Photo
 
@@ -9,3 +9,10 @@ class IndexView(ListView):
     template_name = 'index.html'
     model = Photo
     ordering = '-created_at'
+
+
+class PhotoView(DetailView):
+    pk_url_kwarg = 'pk'
+    model = Photo
+    template_name = 'photo.html'
+    context_object_name = 'photo'
