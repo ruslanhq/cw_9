@@ -1,0 +1,82 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$hk3PiiqdzUO9$itG7O2iaEokX+DsPMVTTbEJMceK+9ur1Pln4EX62dhk=",
+    "last_login": "2019-12-14T05:50:41.447Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-12-14T03:41:01.317Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 1,
+  "fields": {
+    "text": "\u041d\u043e\u0440\u043c \u043a\u043e\u0442\u044b",
+    "photo": 1,
+    "author": 1,
+    "created_at": "2019-12-14T05:54:10.832Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 2,
+  "fields": {
+    "text": "\u043d\u0435 \u043d\u043e\u0440\u043c \u043a\u043e\u0442\u044b",
+    "photo": 1,
+    "author": 1,
+    "created_at": "2019-12-14T05:54:25.239Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 3,
+  "fields": {
+    "text": "\u043d\u043e\u0440\u043c \u0434\u043e\u0440\u043e\u0433\u0430",
+    "photo": 2,
+    "author": 1,
+    "created_at": "2019-12-14T05:54:49.785Z"
+  }
+},
+{
+  "model": "webapp.comment",
+  "pk": 4,
+  "fields": {
+    "text": "\u043d\u0435 \u043d\u043e\u0440\u043c \u0434\u043e\u0440\u043e\u0433\u0430",
+    "photo": 2,
+    "author": 1,
+    "created_at": "2019-12-14T05:55:03.894Z"
+  }
+},
+{
+  "model": "webapp.photo",
+  "pk": 1,
+  "fields": {
+    "picture": "user_pics/dva-kotionka-na-zadnikh-lapakh-zabor-liubopytstvo.jpg",
+    "sign": "\u041a\u043e\u0442\u044b",
+    "created_at": "2019-12-14T05:52:17.059Z",
+    "like": 0,
+    "author": 1
+  }
+},
+{
+  "model": "webapp.photo",
+  "pk": 2,
+  "fields": {
+    "picture": "user_pics/doroga-osen-priroda-10.jpg",
+    "sign": "\u0414\u043e\u0440\u043e\u0433\u0430",
+    "created_at": "2019-12-14T05:52:36.814Z",
+    "like": 0,
+    "author": 1
+  }
+}
+]

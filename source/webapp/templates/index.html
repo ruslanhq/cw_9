@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block menu %}
+{#           <li><a href="{% url 'status_list' %}">Status List</a></li>#}
+{#           <li><a href="{% url 'type_list' %}">Type List</a></li>#}
+{#           <li><a href="{% url 'project_list' %}">Project List</a></li>#}
+{#           <li><a href="{% url 'accounts:users_list' %}">Users List</a></li>#}
+
+
+
+{% endblock %}
+{% block content %}
+<h1 class="text-center">Photos:</h1>
+
+    {% for photo in photos %}
+        <h2>{{ photo.author }}</h2>
+        <p><a href="#"><img src="{{ photo.picture.url }}" alt="prod_pic" class="avatar"></a></p>
+        <div><p>{{ photo.sign }}</p></div>
+{#        <p><a href="{% url 'task_view' task.pk %}">More...</a></p>#}
+{#        <p><a href="{% url 'task_update' task.pk %}">Edit</a></p>#}
+{#        <p><a href="{% url 'task_delete' task.pk %}">Delete</a></p>#}
+        <hr/>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>
