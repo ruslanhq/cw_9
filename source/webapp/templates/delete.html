@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Photo{% endblock %}
+{% block content %}
+    <h1>Are you sure want to delete photo {{ photo.sign }} ?</h1>
+    <form method="POST" action="{% url 'webapp:delete' photo.pk %}" class="text-center">
+        {% csrf_token %}
+        <p><input type="submit" value="Confirm" id="input" class=" btn btn-danger"></p>
+        <p><a href="{% url 'webapp:index'%}" class="btn btn-primary">Cancel</a></p>
+    </form>
+{% endblock %}

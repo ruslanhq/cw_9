@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.urls import reverse
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from webapp.forms import PhotoForm
 from webapp.models import Photo
@@ -42,3 +42,12 @@ class PhotoUpdate(UpdateView):
 
     def get_success_url(self):
         return reverse('webapp:photo', kwargs={'pk': self.object.pk})
+
+
+class PhotoDelete(DeleteView):
+    template_name = 'delete.html'
+    model = Photo
+    context_object_name = 'photo'
+
+    def get_success_url(self):
+        return reverse_lazy('webapp:index')

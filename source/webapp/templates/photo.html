@@ -4,7 +4,7 @@
 {% block title %}Product{% endblock %}
 {% block menu %}
         <li><a href="{% url 'webapp:update' photo.pk %}">Edit</a></li>
-{#        <li><a href="{% url 'task_delete' tasks.pk %}">Delete</a></li>#}
+        <li><a href="{% url 'webapp:delete' photo.pk %}">Delete</a></li>
 
 {% endblock %}
 {% block content %}
