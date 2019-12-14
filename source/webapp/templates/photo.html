@@ -18,6 +18,7 @@
 {#    {% endif %}#}
     <p><b>{{ photo.sign }}</b> </p>
     <p>{{ photo.created_at|date:'d.m.Y H:i:s' }}</p>
+    <p>Like {{ photo.like }}</p>
     <div>
         <h3>Comments:</h3>
 {#        <a href="{% url 'webapp:review_create' product.pk %}">Create Review</a>#}

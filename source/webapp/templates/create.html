@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Photo{% endblock %}
+{% block content %}
+    <h1>Add New Photo</h1>
+    <form method="POST" action="" enctype="multipart/form-data">
+{% include 'partial/task_form.html' with button_text='Create' %}
+
+    </form>
+{% endblock %}
